@@ -6,6 +6,7 @@ services:
     build: .
     environment:
       - ENV
+      - BOTO_CONFIG=/infra/configs/.boto
     volumes:
       - ~/.config:/root/.config
       - ~/.kube:/root/.kube

@@ -4,6 +4,8 @@ set -e
 # check if env variables are set or exit script with error
 : "${ENV:?Please set the name for this environment}"
 
+gcloud config set pass_credentials_to_gsutil false
+
 # create bucket on GCS if needed
 BUCKET_NAME=terraform-sponsoroo
 if gsutil ls | grep "gs://$BUCKET_NAME/"; then
